@@ -74,6 +74,10 @@ app.service('machineService', function($rootScope, $timeout, warningService) {
     }
   }
 
+  var unshiftCommandQueue = function(cmd) {
+    api.commandQueue.unshift(cmd);
+  }
+
   /**
    * Convert a string to an ArrayBuffer.
    */
@@ -266,6 +270,7 @@ app.service('machineService', function($rootScope, $timeout, warningService) {
     connect:connect,
     disconnect:disconnect,
     enqueueCommands:enqueueCommands,
+    unshiftCommandQueue:unshiftCommandQueue,
     emergencyStop:emergencyStop
   };
   return api;

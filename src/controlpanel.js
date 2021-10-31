@@ -173,6 +173,13 @@ app.controller('controlPanelCtrl', function($scope, $timeout,
     machineService.enqueueCommands(cmds);
   }
 
+  $scope.addCommandToQueue = function(cmds) {
+    if (!machineService.isConnected) {
+      return;
+    }
+    machineService.unshiftCommandQueue(cmds);
+  }
+
   // Update the size of various elements to fill the screen.
   var resize = function() {
     var anchor = document.getElementById("bottom-tracker-logs");

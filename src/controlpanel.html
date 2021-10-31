@@ -121,6 +121,22 @@
             ng-click="sendCommands(['M5\n'])" ng-disabled="!machineService.isConnected">⊘</button>
       </div>
     </div>
+
+    <div class="control-section">
+      <h4>baby steps</h4>
+      <div class="distributed-box">
+        <button class="btn btn-default flex"
+                ng-click="addCommandToQueue('M290 Z0.05\n')"
+                ng-disabled="!machineService.isConnected">
+            <span class="glyphicon glyphicon-arrow-up"></span>
+          Up <span class="text-muted">(+0.05)</span></button>
+        <button class="btn btn-default flex"
+                ng-click="addCommandToQueue('M290 Z-0.05\n')"
+                ng-disabled="!machineService.isConnected">
+            <span class="glyphicon glyphicon-arrow-down"></span>
+          Down <span class="text-muted">(-0.05)</span></button>
+      </div>
+    </div>
   </span>
 
 
